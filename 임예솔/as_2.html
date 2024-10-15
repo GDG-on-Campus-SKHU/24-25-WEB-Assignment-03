@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>과제 2</title>
+    <link rel="stylesheet" href="as_2.css" />
+    <script>
+      function check() {
+        var ch1 = document.getElementById("ch1").checked; 
+        var ch2= document.getElementById("ch2").checked;
+        var success = document.getElementById("button");
+        // getElementById() 메서드를 사용하여 각 id 요소를 찾아 반환
+        // 체크박스는 값이 아닌 선택여부를 확인하는 방식으로 checked 속성을 사용하여 확인(true/false)
+
+        if (ch1 && ch2) {                             // check1,2가 체크 되어있을 때
+          button.style.backgroundColor = "#03c75a";   // 버튼 배경을 초록색으로
+          button.style.color= "white";                // 버튼 폰트를 하양색으로
+          button.disabled = false;                    // 버튼 활성화
+        } 
+          else {                                      // 체크되어있지 않을 때
+          button.style.backgroundColor = "";          // 버튼 배경을 그대로
+          button.disabled = true;                     // 버튼 비활성화
+        }
+        // disabled: 사용자가 해동 요소를 사용할 수 없도록 비활성화
+        // true = 비활성화 / false = 활성화
+      }
+      function login() {                             // 로그인 버튼을 누르면 
+        window.location.href = "success.html";       // 성공페이지로 이동한다
+      }
+
+    </script>
+  </head>
+  <body>
+    <div>
+      <div class="login">
+        <img src="./img/logo.jpeg" alt="logo" class="logo" />
+        <form onsubmit="login()">
+        <div class="form">
+            <div class="yakgwan">
+        		<input type="checkbox" class="check" id="ch1"  onchange="check()">
+        		<label for="check1"><span class="pilsu">[필수]</span> 가입약관</label>
+                <div class="text">
+                    GDG서비스를 이용하시거나 서비스 회원으로 가입하실 경우 여러
+                    분은 본 약관 및 관련 운영 정책을 확인하거나 동의하게 되므로, 잠시 시간을 내시어 주의 깊게 살펴봐 주시기 바랍니다.
+                </div>
+        	</div>
+            <div class="yakgwan">
+        		<input type="checkbox" class="check" id="ch2"  onchange="check()">
+        		<label for="check2"><span class="pilsu">[필수]</span>가입약관</label>
+        	
+                <div class="text">
+                    실명 인증된 아이디로 가입,위치 기반 서비스 이용약관, 이벤트 혜택 정보 수신 동의를 포함합니다.
+                </div>
+
+            </div>
+        </div>
+    
+    <button type="button" id="button" onclick="login()" disabled>
+        로그인
+    </button>
+  </form>
+</div>
+  </body>
+</html>

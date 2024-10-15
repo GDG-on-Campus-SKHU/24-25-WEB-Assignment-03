@@ -1,0 +1,100 @@
+body {
+  background-color: #585858;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+#login {
+  display: none;
+  width: 400px;
+  height: 600px;
+  background-color: white;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  margin-top: 90px;
+  border: 1px solid white;
+}
+
+.logo {
+  width: 400px;
+  height: 150px;
+}
+
+hr {
+  color: #585858;
+}
+
+input {
+  width: 100%;
+  border: none;
+}
+
+.button1 {
+  width: 180px;
+  height: 35px;
+  background-color: #03c75a;
+  border-radius: 5px;
+  border: 1px solid #03c75a;
+  color: white;
+}
+
+#button2 {
+  width: 100px;
+  height: 35px;
+  background-color: #f51d1d;
+  border-radius: 5px;
+  border: 1px solid #f51d1d;
+  margin: 10px 5px 20px 5px;
+  color: white;
+}
+
+#join {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: right;
+  color: white;
+}
+
+h6 {
+  margin-right: 20px;
+}
+
+.text {
+  border: 2px solid #e1e1e1;
+  width: 300px;
+  height: 35px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.tt {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+#warning {
+  color: red;
+  font-size: 13px;
+  text-align: left;
+  display: none;
+}
+
+#warning_box {
+  width: 300px;
+  height: 100px;
+  margin: 5px auto;
+  overflow-y: auto;
+}
+
+#warning span {
+  display: inline-block;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <title>과제 3</title>
+    <link rel="stylesheet" href="as_3.css" />
+  </head>
+  <body>
+    <div id="join">
+      <h6>회원가입</h6>
+      <hr />
+    </div>
+    <div>
+      <div id="login">
+        <img src="./img/logo.jpeg" alt="logo" class="logo" />
+        <hr />
+        <div class="tt">
+          <div class="text">
+            <i class="material-symbols-outlined"> person </i>
+            <input type="text" placeholder="아이디" id="id" />
+          </div>
+          <div class="text">
+            <i class="material-symbols-outlined"> lock </i>
+            <input type="password" placeholder="비밀번호" />
+          </div>
+          <div class="text">
+            <i class="material-symbols-outlined"> mail </i>
+            <input type="email" placeholder="이메일" pattern=".+@gmail\.com" />
+          </div>
+          <div class="text">
+            <i class="material-symbols-outlined"> person </i>
+            <input type="text" placeholder="이름" />
+          </div>
+          <div class="text">
+            <i class="material-symbols-outlined"> badge </i>
+            <input type="text" placeholder="생년월일" />
+          </div>
+          <div class="text">
+            <i class="material-symbols-outlined"> call </i>
+            <input type="tel" placeholder="전화번호" />
+          </div>
+        </div>
+        <div id="warning_box">
+          <div id="warning">
+            <span id="w1"> 아이디는 3글자 이상이어야 합니다.</span> <br />
+            <span id="w2"> 비밀번호는 6글자 이상이어야 합니다. </span><br />
+            <span id="w3"> 유효한 이메일을 입력하세요.</span><br />
+            <span id="w4"> 이름을 입력하세요</span><br />
+            <span id="w5"> 생년월일은 YYYY-MM-DD 형식이어야 합니다.</span><br />
+            <span id="w6"> 전화번호는 -없이 숫자 11자 이어야 합니다.</span
+            ><br />
+          </div>
+        </div>
+        <button type="button" class="button1" id="signup">회원가입</button>
+        <button type="button" id="button2">닫기</button>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("join") // id가 join인 요소를 찾는다(회원가입)
+        .addEventListener("click", function () {
+          var lg = document.getElementById("login"); // id가 login인 요소 선택
+          lg.style.display = "block"; // display를 블록 요소로 표시(보이게 함)
+          // display:  페이지에 어떻게 표시될 지 결정하는 css 속성
+          // 1. none -  안보이게함
+          // 2.  block - 블록 요소로 표시
+          // 3. inline - 인라인 요소로 표시
+        });
+
+      document
+        .getElementById("button2") // 닫기 버튼 요소 선택
+        .addEventListener("click", function () {
+          var none = document.getElementById("login"); // id가 login인 요소의
+          none.style.display = "none"; // display를 표시하지 않음
+        });
+
+      // 유효성 검사
+      document.getElementById("signup").addEventListener("click", function () {
+        // 1. 아이디 검사
+        var idValue = document.getElementById("id").value.trim();
+        var w1 = document.getElementById("w1");
+
+        if (idValue.length < 3) {
+          // 아이디가 3글자 미만일 때
+          w1.style.display = "block"; // 경고 문구 표시
+        } else {
+          w1.style.display = "none"; // 경고 문구 숨김
+        }
+      });
+    </script>
+  </body>
+</html>

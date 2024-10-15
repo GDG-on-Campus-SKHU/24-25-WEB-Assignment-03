@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <title>과제 1</title>
+    <link rel="stylesheet" href="as_1.css" />
+    <script>
+      function login() {
+        var id = document.getElementById("id").value.trim();
+        var pw = document.getElementById("pw").value.trim();
+        // getElementById() 메서드를 사용하여 각 id 요소를 찾아 반환
+        // 공백 입력 방어: value 값을 가져올 때 trim() 메서드를 사용하여 앞뒤 공백을 제거
+
+        if (id === "") {
+          // id 요소의 값이 없을 때
+          alert("아이디를 입력해주세요."); // 경고창을 띄우고
+          return false; // 폼이 전송되지 않도록 함
+        } else if (pw === "") {
+          // pw 요소의 값이 없을 때 위와 동일
+          alert("비밀번호를 입력해주세요.");
+          return false;
+        }
+        // 조건에 맞게 로그인 성공시
+        window.location.href = "success.html"; // success.html로 이동
+        return false; // 폼이 전송되지 않도록 함
+        // 폼을 제출하는 것이 아닌 페이지 이동을 하는 것이기에 불필요한 요청을 방지하기 위함
+        // window.location.href = " " : 현 브라우저의 url을 변경하거나 조회할 수 있는 JS 객체 속성
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <div class="login">
+        <img src="./img/logo.jpeg" alt="logo" class="logo" />
+        <hr />
+        <form onsubmit="return login()">
+          <div class="text">
+            <i class="material-symbols-outlined"> person </i>
+            <input type="text" id="id" placeholder="아이디" />
+          </div>
+          <div class="text">
+            <i class="material-symbols-outlined"> lock </i>
+            <input type="password" id="pw" placeholder="비밀번호" />
+          </div>
+          <button type="submit" id="button">로그인</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
